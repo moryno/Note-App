@@ -1,5 +1,13 @@
+import Navbar from "../components/navbar/Navbar.js";
+
 function App() {
-  return <div className="App">Group one</div>;
+  return (
+    <>
+      <Navbar />
+      
+
+    </>
+  );
 }
 
 export default App;
