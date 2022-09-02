@@ -7,7 +7,8 @@ const CreateNotes = () => {
           <form className="data">
               <div className="textForm">
               <label className="inputs">
-                      <input type="text" name="name" placeholder="Write your note here........." />
+                      <input className="inputField" type="text" name="name" placeholder="Heading" />
+                      <input className="formBody" type="text" name="name" placeholder="body" />
                       <button>Submit</button> 
               </label>
               
