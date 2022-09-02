@@ -1,0 +1,25 @@
+.data{
+    height: 20vh;
+    background-color: rgb(195, 195, 195);
+    text-align: center;
+  }
+  input{
+    width: 40vw;
+    padding: 40px;
+    border-radius: 16px 0 16px 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    align-items: center;
+    margin: 30px;
+    font-size: 20px;
+  
+  
+  }
+  button {
+    width: 5vw;
+    height: 6vh;
+    margin: 15px;
+    border-radius: 20px;
+    font-size: 15px;
+  
+  
+  }
