@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Create.css";
 
-const CreateNotes = (props) => {
+const CreateNotes = ({ onAdd }) => {
   const [note, setNote] = useState({
     title: "",
     content: "",
@@ -11,28 +11,25 @@ const CreateNotes = (props) => {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    setNote((prevNote) => {
-      return {
-        ...prevNote,
-        [name]: value,
-      };
-    });
+    setNote({ ...note, [name]: value });
   }
 
   function submitNote(event) {
-    props.onAdd(note);
+    event.preventDefault();
+    onAdd(note);
     setNote({
       title: "",
       content: "",
     });
-    event.preventDefault();
   }
+
   function expand() {
     setExpanded(true);
   }
+
   return (
     <div>
-      <form className="create-note" onClick={submitNote}>
+      <form className="create-note" onSubmit={submitNote}>
         {isExpanded && (
           <input
             name="title"
