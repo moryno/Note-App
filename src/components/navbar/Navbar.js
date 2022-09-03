@@ -5,7 +5,9 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <header>
-      <h1>Note-App</h1>
+      <h1>
+        <i class="fa-solid fa-book-open"></i> Note-App
+      </h1>
     </header>
   );
 }
