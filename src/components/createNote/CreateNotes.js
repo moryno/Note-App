@@ -34,6 +34,7 @@ const CreateNotes = ({ onAdd }) => {
           <input
             name="title"
             onChange={handleChange}
+            autoFocus={true}
             value={note.title}
             placeholder="Title"
           />
