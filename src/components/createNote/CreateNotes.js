@@ -1,22 +1,58 @@
-import React from "react";
-import "./Create.css"
+import React, { useState } from "react";
+import "./Create.css";
 
-const CreateNotes = () => {
+const CreateNotes = (props) => {
+  const [note, setNote] = useState({
+    title: "",
+    content: "",
+  });
+  const [isExpanded, setExpanded] = useState(false);
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setNote((prevNote) => {
+      return {
+        ...prevNote,
+        [name]: value,
+      };
+    });
+  }
+
+  function submitNote(event) {
+    props.onAdd(note);
+    setNote({
+      title: "",
+      content: "",
+    });
+    event.preventDefault();
+  }
+  function expand() {
+    setExpanded(true);
+  }
   return (
     <div>
-          <form className="data">
-              <div className="textForm">
-              <label className="inputs">
-                      <input className="inputField" type="text" name="name" placeholder="Heading" />
-                      <input className="formBody" type="text" name="name" placeholder="body" />
-                      <button>Submit</button> 
-              </label>
-              
-              </div>
+      <form className="create-note" onClick={submitNote}>
+        {isExpanded && (
+          <input
+            name="title"
+            onChange={handleChange}
+            value={note.title}
+            placeholder="Title"
+          />
+        )}
+        <textarea
+          name="content"
+          onChange={handleChange}
+          onClick={expand}
+          value={note.content}
+          placeholder="Take a note..."
+          rows={isExpanded ? "3" : "1"}
+        />
+        <button>+</button>
       </form>
     </div>
   );
 };
 
 export default CreateNotes;
-
