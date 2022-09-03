@@ -46,7 +46,9 @@ const CreateNotes = ({ onAdd }) => {
           placeholder="Take a note..."
           rows={isExpanded ? "3" : "1"}
         />
-        <button>+</button>
+        <button>
+          <i class="fa-solid fa-plus"></i>
+        </button>
       </form>
     </div>
   );
