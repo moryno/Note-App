@@ -13,12 +13,20 @@ function App() {
       return [...prevNotes, newNotes];
     });
   };
+  const onDelete = (id) => {
+    setNotes((prevNotes) => {
+      return prevNotes.filter((note, index) => {
+        return index !== id;
+      });
+    });
+  };
+
   return (
     <div>
       <Navbar />
       <CreateNotes onAdd={addNote} />
       {notes?.map((note) => {
-        return <Notes note={note} />;
+        return <Notes note={note} onDelete={onDelete} />;
       })}
 
       <Footer />

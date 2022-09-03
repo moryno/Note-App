@@ -1,8 +1,10 @@
 import React from "react";
 import "./Notes.css";
 
-function Card({ note }) {
-  function handleClick() {}
+function Card({ note, onDelete }) {
+  function handleClick() {
+    onDelete(note.id);
+  }
 
   return (
     <div className="card">
