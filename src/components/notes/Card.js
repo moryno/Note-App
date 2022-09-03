@@ -1,15 +1,15 @@
-import React from 'react'
-import './Card.css'
+import React from "react";
+import "./Card.css";
 
-function Card({notes}) {
-  const {title, body} = notes
+function Card({ notes }) {
+  const { title, body } = notes;
   return (
-    <div className='card'>
-      <h4>{title}</h4>
+    <div className="card">
+      <h1>{title}</h1>
       <p>{body}</p>
-      <i class="fa-solid fa-trash"></i>
+      <button>+</button>
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;
